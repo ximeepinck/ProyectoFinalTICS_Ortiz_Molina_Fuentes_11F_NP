@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto - Landing Page</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --texto: #1c1a2e;
+    --texto-suave: rgba(28,26,46,0.65);
+    --vidrio: rgba(255,255,255,0.55);
+    --borde-vidrio: rgba(255,255,255,0.8);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    min-height: 100%;
+    font-family: 'Manrope', Arial, sans-serif;
+    color: var(--texto);
+  }
+
+  body{
+    background: radial-gradient(circle at 15% 10%, #ffd6e8 0%, transparent 45%),
+                radial-gradient(circle at 85% 15%, #c8e8ff 0%, transparent 45%),
+                radial-gradient(circle at 50% 90%, #d9d1ff 0%, transparent 55%),
+                linear-gradient(160deg, #f5f3ff 0%, #eaf6ff 100%);
+    background-attachment: fixed;
+  }
+
+  header{
+    padding: 70px 20px 40px;
+    text-align: center;
+  }
+
+  header .etiqueta{
+    display:inline-block;
+    background: var(--vidrio);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--borde-vidrio);
+    color: var(--texto);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 999px;
+  }
+
+  header h1{
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 800;
+    margin: 20px 0 12px;
+    background: linear-gradient(90deg, #7b5cff, #ff6fa8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  header p.desc{
+    color: var(--texto-suave);
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  nav{
+    display:flex;
+    justify-content:center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  nav a{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--texto);
+    background: var(--vidrio);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--borde-vidrio);
+    padding: 10px 20px;
+    border-radius: 999px;
+    transition: 0.2s;
+  }
+
+  nav a:hover{
+    background: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  main{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  .cuadricula{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .cuadrito{
+    background: var(--vidrio);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--borde-vidrio);
+    border-radius: 24px;
+    padding: 26px;
+    box-shadow: 0 8px 30px rgba(90, 70, 160, 0.12);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cuadrito .fila-icono{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .cuadrito .num{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  #podcast .num{ background: linear-gradient(135deg, #ff9a8b, #ff6fa8); }
+  #documento .num{ background: linear-gradient(135deg, #6fb6ff, #7b5cff); }
+  #infografia .num{ background: linear-gradient(135deg, #ffd76f, #ff9a5a); }
+  #circuito .num{ background: linear-gradient(135deg, #6fffb0, #3fd1c9); }
+
+  .cuadrito .etiqueta-tipo{
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--texto-suave);
+  }
+
+  .cuadrito h3{
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .cuadrito p{
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .espacio-evidencia{
+    min-height: 150px;
+    border: 2px dashed var(--borde-vidrio);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 15px;
+    background: rgba(255,255,255,0.35);
+  }
+
+  img.evidencia, video.evidencia, iframe.evidencia, audio.evidencia{
+    width: 100%;
+    max-height: 460px;
+    border-radius: 16px;
+    border: 1px solid var(--borde-vidrio);
+  }
+
+  audio.evidencia{ max-height: none; }
+
+  @media (max-width: 650px){
+    .cuadricula{ grid-template-columns: 1fr; }
+  }
+
+  footer{
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="etiqueta">Proyecto de tecnología</span>
+  <h1>Título del proyecto</h1>
+  <p class="desc">
+    <!-- ESPACIO: escribe aquí una breve descripción del proyecto -->
+    Descripción breve del proyecto y su objetivo dentro de la clase.
+  </p>
+
+  <nav>
+    <a href="#podcast">Podcast</a>
+    <a href="#documento">Documento</a>
+    <a href="#infografia">Infografía</a>
+    <a href="#circuito">Circuito</a>
+  </nav>
+</header>
+
+<main>
+  <div class="cuadricula">
+
+    <div class="cuadrito" id="podcast">
+      <div class="fila-icono">
+        <span class="num">1</span>
+        <span class="etiqueta-tipo">Podcast</span>
+      </div>
+      <h3>Título del podcast</h3>
+      <p><!-- ESPACIO: breve descripción del podcast --></p>
+      <div class="espacio-evidencia">Espacio para el audio</div>
+      <!-- Reemplazar por:
+        <audio class="evidencia" controls>
+          <source src="Recursos/audio/podcast.mp3" type="audio/mpeg">
+        </audio>
+      -->
+    </div>
+
+    <div class="cuadrito" id="documento">
+      <div class="fila-icono">
+        <span class="num">2</span>
+        <span class="etiqueta-tipo">Documento</span>
+      </div>
+      <h3>Título del documento</h3>
+      <p><!-- ESPACIO: breve descripción del documento --></p>
+      <div class="espacio-evidencia">Espacio para el PDF</div>
+      <!-- Reemplazar por:
+        <iframe class="evidencia" src="Recursos/pdf/documento.pdf" height="400px"></iframe>
+      -->
+    </div>
+
+    <div class="cuadrito" id="infografia">
+      <div class="fila-icono">
+        <span class="num">3</span>
+        <span class="etiqueta-tipo">Infografía</span>
+      </div>
+      <h3>Título de la infografía</h3>
+      <p><!-- ESPACIO: breve descripción de la infografía --></p>
+      <div class="espacio-evidencia">Espacio para la imagen</div>
+      <!-- Reemplazar por:
+        <img class="evidencia" src="Recursos/img/infografia.jpg" alt="Infografía">
+      -->
+    </div>
+
+    <div class="cuadrito" id="circuito">
+      <div class="fila-icono">
+        <span class="num">4</span>
+        <span class="etiqueta-tipo">Circuito</span>
+      </div>
+      <h3>Título del circuito</h3>
+      <p><!-- ESPACIO: breve descripción del circuito --></p>
+      <div class="espacio-evidencia">Espacio para foto o video</div>
+      <!-- Reemplazar por:
+        <img class="evidencia" src="Recursos/img/circuito.jpg" alt="Circuito">
+        o
+        <video class="evidencia" controls>
+          <source src="Recursos/video/circuito.mp4" type="video/mp4">
+        </video>
+      -->
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  @usuario_del_repositorio
+</footer>
+
+</body>
+</html>
