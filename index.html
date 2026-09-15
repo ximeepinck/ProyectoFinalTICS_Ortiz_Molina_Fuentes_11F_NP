@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proyecto - Landing Page</title>
+<title>IRTRA Smart Light - Proyecto</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,28 +168,21 @@
     font-weight: 500;
   }
 
-  .espacio-evidencia{
-    min-height: 150px;
-    border: 2px dashed var(--borde-vidrio);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--texto-suave);
-    font-size: 0.8rem;
-    text-align: center;
-    padding: 15px;
-    background: rgba(255,255,255,0.35);
-  }
-
   img.evidencia, video.evidencia, iframe.evidencia, audio.evidencia{
     width: 100%;
     max-height: 460px;
     border-radius: 16px;
     border: 1px solid var(--borde-vidrio);
+    object-fit: cover;
   }
 
-  audio.evidencia{ max-height: none; }
+  iframe.evidencia{
+    height: 400px;
+  }
+
+  audio.evidencia{ 
+    max-height: none; 
+  }
 
   @media (max-width: 650px){
     .cuadricula{ grid-template-columns: 1fr; }
@@ -208,10 +201,9 @@
 
 <header>
   <span class="etiqueta">Proyecto de tecnología</span>
-  <h1>Título del proyecto</h1>
+  <h1>IRTRA Smart Light</h1>
   <p class="desc">
-    <!-- ESPACIO: escribe aquí una breve descripción del proyecto -->
-    Descripción breve del proyecto y su objetivo dentro de la clase.
+    Presentación interactiva de las evidencias e innovaciones del proyecto IRTRA Smart Light.
   </p>
 
   <nav>
@@ -225,69 +217,61 @@
 <main>
   <div class="cuadricula">
 
+    <!-- Tarjeta 1: Podcast -->
     <div class="cuadrito" id="podcast">
       <div class="fila-icono">
         <span class="num">1</span>
         <span class="etiqueta-tipo">Podcast</span>
       </div>
-      <h3>Título del podcast</h3>
-      <p><!-- ESPACIO: breve descripción del podcast --></p>
-      <div class="espacio-evidencia">Espacio para el audio</div>
-      < Reemplazar por:
-        <audio class="evidencia" controls>
-          <source src="IRTRA SMART LIGHT.mp3.mpeg" type="audio/mpeg">
-        </audio>
-      >
+      <h3>Podcast Informativo</h3>
+      <p>Audio explicativo acerca de las funcionalidades y alcance del sistema inteligente.</p>
+      <audio class="evidencia" controls>
+        <source src="IRTRA SMART LIGHT.mp3.mpeg" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
     </div>
 
+    <!-- Tarjeta 2: Documento -->
     <div class="cuadrito" id="documento">
       <div class="fila-icono">
         <span class="num">2</span>
         <span class="etiqueta-tipo">Documento</span>
       </div>
-      <h3>Título del documento</h3>
-      <p><!-- ESPACIO: breve descripción del documento --></p>
-      <div class="espacio-evidencia">Espacio para el PDF</div>
-      < Reemplazar por:
-        <iframe class="evidencia" src="IRTRA_SMART_LIGHT_Ximena_Ortiz_Edgar_Fuentes_Mateo_Molina_FINAL (1).pdf" height="400px"></iframe>
-      >
+      <h3>Documentación Oficial</h3>
+      <p>Informe detallado elaborado por Ximena Ortiz, Edgar Fuentes y Mateo Molina.</p>
+      <iframe class="evidencia" src="IRTRA_SMART_LIGHT_Ximena_Ortiz_Edgar_Fuentes_Mateo_Molina_FINAL (1).pdf"></iframe>
     </div>
 
+    <!-- Tarjeta 3: Infografía -->
     <div class="cuadrito" id="infografia">
       <div class="fila-icono">
         <span class="num">3</span>
         <span class="etiqueta-tipo">Infografía</span>
       </div>
-      <h3>Título de la infografía</h3>
-      <p><!-- ESPACIO: breve descripción de la infografía --></p>
-      <div class="espacio-evidencia">Espacio para la imagen</div>
-      < Reemplazar por:
-        <img class="evidencia" src="WhatsApp Image 2026-09-14 at 8.51.02 PM.jpeg" alt="Infografía">
-    >
+      <h3>Infografía Visual</h3>
+      <p>Esquema gráfico interactivo con el resumen visual del proyecto.</p>
+      <img class="evidencia" src="WhatsApp Image 2026-09-14 at 8.51.02 PM.jpeg" alt="Infografía IRTRA Smart Light">
     </div>
 
+    <!-- Tarjeta 4: Circuito -->
     <div class="cuadrito" id="circuito">
       <div class="fila-icono">
         <span class="num">4</span>
         <span class="etiqueta-tipo">Circuito</span>
       </div>
-      <h3>Título del circuito</h3>
-      <p><!-- ESPACIO: breve descripción del circuito --></p>
-      <div class="espacio-evidencia">Espacio para foto o video</div>
-      < Reemplazar por:
-        <img class="evidencia" src="WhatsApp Image 2026-09-14 at 9.04.32 PM.jpeg" alt="Circuito">
-        o
-        <video class="evidencia" controls>
-          <source src="WhatsApp Video 2026-09-14 at 9.04.32 PM.mp4" type="video/mp4">
-        </video>
-      >
+      <h3>Demostración del Circuito</h3>
+      <p>Vista del prototipo físico y pruebas de funcionamiento del sistema.</p>
+      <video class="evidencia" controls>
+        <source src="WhatsApp Video 2026-09-14 at 9.04.32 PM.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
     </div>
 
   </div>
 </main>
 
 <footer>
-  @usuario_del_repositorio
+  © IRTRA Smart Light Team
 </footer>
 
 </body>
